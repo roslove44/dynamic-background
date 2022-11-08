@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Change Background each second</title>
+
+    <style>
+      @font-face {
+        font-family: "PoorStory";
+        src: url(./PoorStory-Regular.ttf);
+      }
+
+      * {
+        box-sizing: border-box;
+        overflow-y: hidden;
+        overflow-x: hidden;
+      }
+
+      body {
+        margin: 0px;
+      }
+
+      header {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: url(./images/bg_1.jpg) cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      h1 {
+        font-family: "PoorStory";
+        color: whitesmoke;
+        text-transform: uppercase;
+        font-weight: 900;
+        border-radius: 20px;
+        padding: 10px;
+        background-color: brown;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <header id="hero">
+      <h1>Hello young entrepreneur</h1>
+    </header>
+
+
+    <!-- script to change background each x time -->
+    <script>
+      let i = 0;
+
+      function change() {
+        var image = document.getElementById("hero");
+        if (i < 3) {
+          i = i + 1;
+          image.style.background =
+            "url(./images/bg_" + i + ".jpg)";
+            image.style.backgroundRepeat = "no-repeat";
+            image.style.backgroundPosition = "center center";
+            image.style.backgroundSize = "cover"
+        } else {
+          i = 0;
+        }
+      }
+      setInterval(change, 2000);
+    </script>
+    <!-- end script  -->
+
+  </body>
+</html>
